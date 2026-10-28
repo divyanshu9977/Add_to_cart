@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #product-table {
+        border-collapse: collapse;
+    }
+    #product-table th,td {
+        border: 1px solid #0056b3;
+        padding: 10px;
+    }
+</style>
+<body>
+    <table id="product-table">
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Apple</td>
+            <td id="apple">0</td>
+            <td><button id="apple-btn">Add To Cart</button><button id="apple-remove">Remove</button></td>
+        </tr>
+        <tr>
+            <td>Orange</td>
+            <td id="orange">0</td>
+            <td><button id="orange-btn">Add To Cart</button><button id="orange-remove">Remove</button></td>
+        </tr>
+        <tr>
+            <td>Pinapple</td>
+            <td id="pineapple">0</td>
+            <td><button id="pineapple-btn">Add To Cart</button><button id="pineapple-remove">Remove</button></td>
+        </tr>
+    </table>
+
+    <script>
+        let appleBtn = document.getElementById("apple-btn");
+        let orangeBtn = document.getElementById("orange-btn");
+        let pineappleBtn = document.getElementById("pineapple-btn");
+        let removeApple = document.getElementById("apple-remove");
+        let removeOrange = document.getElementById("orange-remove");
+        let removePineapple = document.getElementById("pineapple-remove");
+        let apple = 0;
+        let orange = 0;
+        let pineapple = 0;
+
+        appleBtn.onclick = function(){
+            apple++;
+            document.getElementById("apple").innerText = apple;
+        }
+
+        orangeBtn.onclick = function(){
+            orange++;
+            document.getElementById("orange").innerText = orange;
+        }
+
+        pineappleBtn.onclick = function(){
+            pineapple++;
+            document.getElementById("pineapple").innerText = pineapple;
+        }
+
+        removeApple.onclick = function(){
+            if(apple > 0){
+                apple--;
+            }
+            document.getElementById("apple").innerText = apple;
+        }
+
+        removeOrange.onclick = function(){
+            if(orange > 0){
+                orange--;
+            }
+            document.getElementById("orange").innerText = orange;
+        }
+        removePineapple.onclick = function(){
+            if(pineapple > 0){
+                pineapple--;
+            }
+            document.getElementById("pineapple").innerText = pineapple;
+        }
+    </script>
+</body>
+</html>
